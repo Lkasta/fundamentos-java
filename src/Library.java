@@ -62,7 +62,7 @@ public class Library {
     }
 
     public void showAvailableBooks() {
-        System.out.println("\nLivros disponíveis:");
+        System.out.println("\nAvailable books:");
 
         boolean hasAvailableBook = false;
 
@@ -70,15 +70,15 @@ public class Library {
             if (book.isAvailable()) {
                 System.out.println("--------------------------------------------------");
                 System.out.println("ID: " + book.getId());
-                System.out.println("Título: " + book.getTitle());
-                System.out.println("Autor: " + book.getAuthor().getName());
+                System.out.println("Title: " + book.getTitle());
+                System.out.println("Author: " + book.getAuthor().getName());
 
                 hasAvailableBook = true;
             }
         }
 
         if (!hasAvailableBook) {
-            System.out.println("Nenhum livro disponível no momento.");
+            System.out.println("No available books at the moment.");
         }
     }
 
@@ -96,12 +96,12 @@ public class Library {
         Book book = findBookById(bookId);
 
         if (book == null) {
-            System.out.println("Livro não encontrado.");
+            System.out.println("Book not found.");
             return;
         }
 
         if (!book.isAvailable()) {
-            System.out.println("Este livro já está emprestado.");
+            System.out.println("This book is already rented.");
             return;
         }
 
@@ -117,9 +117,9 @@ public class Library {
         book.setAvailable(false);
         book.setLastUpdate(LocalDate.now());
 
-        System.out.println("\nEmpréstimo realizado com sucesso!");
-        System.out.println("Livro: " + book.getTitle());
-        System.out.println("Cliente: " + clientName);
-        System.out.println("Data do empréstimo: " + rent.getRentedAt());
+        System.out.println("\nRental completed successfully!");
+        System.out.println("Book: " + book.getTitle());
+        System.out.println("Client: " + clientName);
+        System.out.println("Rental Date: " + rent.getRentedAt());
     }
 }

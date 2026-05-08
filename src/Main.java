@@ -7,35 +7,35 @@ public class Main {
         Library library = new Library();
         System.out.println(library);
 
-        System.out.println("Bem-vindo à biblioteca!");
+        System.out.println("Welcome to the library!");
 
         while (true) {
-            System.out.println("\nDeseja ver a lista de livros disponíveis?");
-            System.out.print("Digite SIM ou NÃO: ");
+            System.out.println("\nDo you want to see the list of available books?");
+            System.out.print("Enter YES or NO: ");
 
             String answer = scanner.nextLine();
 
-            if (answer.equalsIgnoreCase("SIM")) {
+            if (answer.equalsIgnoreCase("YES")) {
                 library.showAvailableBooks();
 
-                System.out.print("\nDigite o ID do livro que deseja emprestar: ");
+                System.out.print("\nEnter the ID of the book you want to borrow: ");
                 int bookId = scanner.nextInt();
                 scanner.nextLine();
 
-                System.out.print("Digite seu nome: ");
+                System.out.print("Enter your name: ");
                 String clientName = scanner.nextLine();
 
                 library.rentBook(bookId, clientName);
 
-                System.out.println("\nObrigado por usar o sistema da biblioteca!");
+                System.out.println("\nThank you for using the library system!");
                 break;
 
-            } else if (answer.equalsIgnoreCase("NÃO") || answer.equalsIgnoreCase("NAO")) {
-                System.out.println("\nObrigado por usar o sistema da biblioteca!");
+            } else if (answer.equalsIgnoreCase("NO")) {
+                System.out.println("\nThank you for using the library system!");
                 break;
 
             } else {
-                System.out.println("Opção inválida. Digite SIM ou NÃO.");
+                System.out.println("Invalid option. Please enter YES or NO.");
             }
         }
 
